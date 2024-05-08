@@ -1,6 +1,6 @@
-CREATE DATABASE prj2;
+CREATE DATABASE prjj;
 
-USE prj2;
+USE prjj;
 
 DROP TABLE board;
 
@@ -13,3 +13,20 @@ CREATE TABLE board
     inserted DATETIME      NOT NULL DEFAULT NOW()
 );
 
+SELECT*
+FROM board;
+
+CREATE TABLE member
+(
+    id        INT PRIMARY KEY AUTO_INCREMENT,
+    email     VARCHAR(200) NOT NULL UNIQUE,
+    password  VARCHAR(200) NOT NULL,
+    nick_name VARCHAR(100) NOT NULL UNIQUE
+);
+
+ALTER TABLE member
+    ADD COLUMN inserted DATETIME NOT NULL DEFAULT NOW();
+
+
+SELECT *
+FROM member;
